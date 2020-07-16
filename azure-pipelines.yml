@@ -12,13 +12,13 @@ pool:
 
 steps:
 
-
-- task: PublishBuildArtifacts@1
-  inputs:
-    PathtoPublish: '- task: CmdLine@2
+- task: CmdLine@2
   inputs:
     script: |
       echo $(Build.ArtifactStagingDirectory)
-      
-      find $(Build.ArtifactStagingDirectory)'
+      find $(Build.ArtifactStagingDirectory)
+
+- task: PublishBuildArtifacts@1
+  inputs:
+    PathtoPublish: '$(Build.ArtifactStagingDirectory)'
     ArtifactName: 'ansible-roboshop'
