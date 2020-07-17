@@ -1,0 +1,8 @@
+- name: Gather User Information
+  shell: id -u
+  register: out
+
+- name: Fail with root privilage missing
+  when: out.stdout != "0"
+  fail:
+    msg: To proceed, You need to enable privilege escalation or Run as Root user directly.
