@@ -2,3 +2,14 @@
   copy:
     src: mongo.repo
     dest: /etc/yum.repos.d/mongodb.repo
+
+- name: Install MongoDB
+  yum:
+    name: mongodb-org
+    state: latest
+
+- name: Start Service MongoDB
+  systemd:
+    state: started
+    name: mongod
+    enabled: yes
