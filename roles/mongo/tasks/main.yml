@@ -13,7 +13,3 @@
     state: started
     name: mongod
     enabled: yes
-
-- name: Print ABC
-  debug:
-    msg: "{{ABC}}"
