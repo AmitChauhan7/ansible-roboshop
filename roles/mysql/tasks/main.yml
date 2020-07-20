@@ -11,7 +11,8 @@
 
 - name: Check Package Installed
   yum:
-    list: djnsdj
+    list: installed
+    name: ewjndjnsd
 
 - name: Install MySQL
   yum:
