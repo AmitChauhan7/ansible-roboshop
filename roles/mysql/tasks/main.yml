@@ -13,6 +13,11 @@
   yum:
     list: installed
     name: ewjndjnsd
+  register: out
+
+- name: Print out
+  debug:
+    msg: "{{out}}"
 
 - name: Install MySQL
   yum:
