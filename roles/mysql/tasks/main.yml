@@ -1,8 +1,8 @@
-- name: Download MySQL
-  unarchive:
-    src: "{{MYSQL_URL}}"
-    dest: /tmp
-    remote_src: yes
+#- name: Download MySQL
+#  unarchive:
+#    src: "{{MYSQL_URL}}"
+#    dest: /tmp
+#    remote_src: yes
 
 - name: Remove MariaDB
   yum:
