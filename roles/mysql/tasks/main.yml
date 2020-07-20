@@ -9,15 +9,18 @@
     name: mariadb-libs
     state: absent
 
+- name: Check Package Installed
+  yum:
+    list: djnsdj
 
 - name: Install MySQL
   yum:
     name: /tmp/{{item}}
     state: present
   loop:
-    - mysql-community-client-5.7.28-1.el7.x86_64.rpm
     - mysql-community-common-5.7.28-1.el7.x86_64.rpm
     - mysql-community-libs-5.7.28-1.el7.x86_64.rpm
+    - mysql-community-client-5.7.28-1.el7.x86_64.rpm
     - mysql-community-server-5.7.28-1.el7.x86_64.rpm
 
 
