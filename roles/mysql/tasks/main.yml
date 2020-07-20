@@ -11,7 +11,7 @@
 
 - name: Check Package Installed
   yum:
-    list: ewjndjnsd
+    list: yum
   register: out
 
 - name: Print out
