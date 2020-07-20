@@ -2,13 +2,13 @@
   yum:
     list: mysql-community-server
   register: out
-  
+
 - name: Download MySQL
   unarchive:
     src: "{{MYSQL_URL}}"
     dest: /tmp
     remote_src: yes
-  when: "{{out.results | length}}" == 0
+  when: "{{out.results | length}}" = 0
 
 - name: Remove MariaDB
   yum:
