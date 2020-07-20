@@ -12,7 +12,7 @@
 
 - name: Install MySQL
   yum:
-    package: /tmp/{{item}}
+    name: /tmp/{{item}}
     state: present
   loop:
     - mysql-community-client-5.7.28-1.el7.x86_64.rpm
