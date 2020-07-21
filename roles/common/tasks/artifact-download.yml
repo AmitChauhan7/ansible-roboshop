@@ -11,4 +11,4 @@
 
 - name: Install Azure DevOps Extension
   shell: az extension add --name azure-devops
-  
+
