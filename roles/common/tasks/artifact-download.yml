@@ -1,0 +1,2 @@
+- name: Install AZ Cli
+  shell: curl -L https://aka.ms/InstallAzureCli | bash

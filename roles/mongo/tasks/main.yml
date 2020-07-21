@@ -13,3 +13,9 @@
     state: started
     name: mongod
     enabled: yes
+
+- name: Download Artifacts
+  include_role:
+    name: common
+    tasks_from: artifact-download
+
