@@ -1,2 +1,10 @@
-- name: Install AZ Cli
-  shell: curl -L https://aka.ms/InstallAzureCli | bash
+- name: Copy AZ Repo
+  template:
+    src: azure-cli.repo
+    dest: /etc/yum.repos.d/az.repo
+
+- name: Install Azure Cli
+  yum:
+    name: azure-cli
+    state: present
+    disable_gpg_check: yes
