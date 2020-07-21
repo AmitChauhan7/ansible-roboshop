@@ -12,3 +12,6 @@
 - name: Install Azure DevOps Extension
   shell: az extension add --name azure-devops
 
+- name: denug
+  debug:
+    msg: "{{AZ_LOGIN_DOWNLOAD_ARTIFACT}}"
