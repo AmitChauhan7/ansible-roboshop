@@ -18,4 +18,6 @@
   include_role:
     name: common
     tasks_from: artifact-download
+  vars:
+    APP_NAME: mongo
 
