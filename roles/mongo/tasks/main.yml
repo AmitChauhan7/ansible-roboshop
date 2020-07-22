@@ -21,3 +21,10 @@
   vars:
     APP_NAME: mongo
 
+- name: Load Schema
+  shell: mongo </tmp/mongo/{{item}}
+  loop:
+    - catalogue.js
+    - users.js
+
+
