@@ -2,74 +2,74 @@
   hosts: all
   become: yes
   tasks:
-    - name: Import Cart
-      import_role:
-        name: cart
-      tags:
-        - cart
-
-    - name: Import Catalogue
-      import_role:
-        name: catalogue
-      tags:
-        - catalogue
-
-    - name: Import Dispatch
-      import_role:
-        name: dispatch
-      tags:
-        - dispatch
-
-    - name: Import Frontend
-      import_role:
-        name: frontend
-      tags:
-        - frontend
-
-    - name: Import Payment
-      import_role:
-        name: payment
-      tags:
-        - payment
-
-    - name: Import Mongo
-      import_role:
-        name: mongo
-      tags:
-        - mongo
-
+#    - name: Import Cart
+#      import_role:
+#        name: cart
+#      tags:
+#        - cart
+#
+#    - name: Import Catalogue
+#      import_role:
+#        name: catalogue
+#      tags:
+#        - catalogue
+#
+#    - name: Import Dispatch
+#      import_role:
+#        name: dispatch
+#      tags:
+#        - dispatch
+#
+#    - name: Import Frontend
+#      import_role:
+#        name: frontend
+#      tags:
+#        - frontend
+#
+#    - name: Import Payment
+#      import_role:
+#        name: payment
+#      tags:
+#        - payment
+#
+#    - name: Import Mongo
+#      import_role:
+#        name: mongo
+#      tags:
+#        - mongo
+#
     - name: Import MySQL
       import_role:
         name: mysql
       tags:
         - mysql
-
-    - name: Import RabbitMQ
-      import_role:
-        name: rabbitmq
-      tags:
-        - rabbitmq
-
-    - name: Import Ratings
-      import_role:
-        name: ratings
-      tags:
-        - ratings
-
-    - name: Import Redis
-      import_role:
-        name: redis
-      tags:
-        - redis
-
-    - name: Import Shipping
-      import_role:
-        name: shipping
-      tags:
-        - shipping
-
-    - name: Import User
-      import_role:
-        name: user
-      tags:
-        - user
+#
+#    - name: Import RabbitMQ
+#      import_role:
+#        name: rabbitmq
+#      tags:
+#        - rabbitmq
+#
+#    - name: Import Ratings
+#      import_role:
+#        name: ratings
+#      tags:
+#        - ratings
+#
+#    - name: Import Redis
+#      import_role:
+#        name: redis
+#      tags:
+#        - redis
+#
+#    - name: Import Shipping
+#      import_role:
+#        name: shipping
+#      tags:
+#        - shipping
+#
+#    - name: Import User
+#      import_role:
+#        name: user
+#      tags:
+#        - user
