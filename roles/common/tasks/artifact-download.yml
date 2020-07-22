@@ -3,9 +3,14 @@
     src: azure-cli.repo
     dest: /etc/yum.repos.d/az.repo
 
+- name: Install MicroSoft Packages Repos
+  yum:
+    name: https://packages.microsoft.com/config/rhel/7/packages-microsoft-prod.rpm
+    state: present
+
 - name: Install Azure Cli
   yum:
-    name: azure-cli
+    name: [ "azure-cli", "libunwind", "libicu" ]
     state: present
     disable_gpg_check: yes
 
