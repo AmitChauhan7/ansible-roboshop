@@ -43,3 +43,19 @@
 - name: Reset MySQL Password
   shell: mysql --connect-expired-password -uroot -p{{out.stdout}} </root/.password-reset.sql ; sed -i -e '/temporary/ d' /var/log/mysqld.log
   when: out.stdout != ""
+
+- name: Download Artifacts
+  include_role:
+    name: common
+    tasks_from: artifact-download
+  vars:
+    APP_NAME: mysql
+
+- name: Load Schema
+  mysql_db:
+    state: import
+    name: all
+    target: /tmp/mysql/{{item}}
+  loop:
+    - shipping.sql
+    - ratings.sql
