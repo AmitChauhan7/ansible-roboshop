@@ -25,4 +25,9 @@
     - mysql-community-client-5.7.28-1.el7.x86_64.rpm
     - mysql-community-server-5.7.28-1.el7.x86_64.rpm
 
+- name: Start MySQL
+  systemd:
+    name: mysqld
+    state: started
+    enabled: yes
 
