@@ -24,7 +24,11 @@
     - mysql-community-libs-5.7.28-1.el7.x86_64.rpm
     - mysql-community-client-5.7.28-1.el7.x86_64.rpm
     - mysql-community-server-5.7.28-1.el7.x86_64.rpm
-    - MySQL-python
+
+- name: Install MySQL Python Module
+  yum:
+    name: MySQL-python
+    state: present
 
 - name: Start MySQL
   systemd:
