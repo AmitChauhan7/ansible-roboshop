@@ -35,6 +35,10 @@
   shell: grep 'A temporary password' /var/log/mysqld.log | awk '{print $NF}'
   register: out
 
+- name: deug
+  debug:
+    msg: "{{out.stdout}}"
+
 - name: Copy SQL file
   template:
     src: password-reset.sql
