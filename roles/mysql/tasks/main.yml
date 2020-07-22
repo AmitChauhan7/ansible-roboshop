@@ -31,3 +31,14 @@
     state: started
     enabled: yes
 
+- name: Grab Default Root Password
+  shell: grep 'A temporary password' /var/log/mysqld.log | awk '{print $NF}'
+  register: out
+
+- name: Copy SQL file
+  template:
+    src: password-reset.sql
+    dest: /root/.password-reset.sql
+
+#- name: Reset MySQL Password
+#  shell: mysql --connect-expired-password -uroot -p </tmp/remove-plugin.sql
