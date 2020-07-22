@@ -35,10 +35,6 @@
   shell: grep 'A temporary password' /var/log/mysqld.log | awk '{print $NF}'
   register: out
 
-- name: deug
-  debug:
-    msg: "{{out.stdout}}"
-
 - name: Copy SQL file
   template:
     src: password-reset.sql
@@ -46,4 +42,4 @@
 
 - name: Reset MySQL Password
   shell: mysql --connect-expired-password -uroot -p{{out.stdout}} </root/.password-reset.sql ; sed -e '/temporary/ d' /var/log/mysqld.log
-  when: out.stdout == ""
+  when: out.stdout != ""
