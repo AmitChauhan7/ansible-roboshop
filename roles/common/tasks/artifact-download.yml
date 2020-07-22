@@ -19,3 +19,5 @@
 
 - name: Login to AZ DevOps
   shell: echo {{AZ_LOGIN_DOWNLOAD_ARTIFACT}} | az devops login --organization https://dev.azure.com/DevOps-Batches/
+
+-
