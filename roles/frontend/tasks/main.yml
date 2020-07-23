@@ -1,0 +1,12 @@
+- name: Install Nginx
+  yum:
+    name: nginx
+    state: started
+
+- name: Download Artifacts
+  include_role:
+    name: common
+    tasks_from: artifact-download
+  vars:
+    APP_NAME: frontend
+
