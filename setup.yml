@@ -1,6 +1,8 @@
 - name: Setup RoboShop Application
   hosts: all
   become: yes
+  vars:
+    APPLICATION_USER: roboshop
   tasks:
     - name: Import Cart
       import_role:

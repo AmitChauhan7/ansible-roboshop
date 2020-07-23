@@ -1,0 +1,4 @@
+- name: Add application user
+  user:
+    name: "{{APPLICATION_USER}}"
+
