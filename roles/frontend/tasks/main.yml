@@ -15,5 +15,10 @@
     path: /usr/share/nginx/html
     state: absent
 
+- name: Copy Htdocs
+  copy:
+    src: /tmp/frontend/static
+    dest: /usr/share/nginx/html
+
 
 
