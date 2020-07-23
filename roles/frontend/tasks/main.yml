@@ -17,8 +17,8 @@
 
 - name: Copy Htdocs
   copy:
-    src: /tmp/frontend/static
-    dest: /usr/share/nginx/html
+    src: /tmp/frontend/static/*
+    dest: /usr/share/nginx/html/
     remote_src: yes
 
 - name: Setup Nginx Configuration
