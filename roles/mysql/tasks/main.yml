@@ -24,6 +24,7 @@
     - mysql-community-libs-5.7.28-1.el7.x86_64.rpm
     - mysql-community-client-5.7.28-1.el7.x86_64.rpm
     - mysql-community-server-5.7.28-1.el7.x86_64.rpm
+    - mysql-community-libs-compat-5.7.28-1.el7.x86_64.rpm
 
 - name: Install MySQL Python Module
   yum:
