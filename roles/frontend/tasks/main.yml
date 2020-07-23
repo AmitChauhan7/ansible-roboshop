@@ -10,3 +10,10 @@
   vars:
     APP_NAME: frontend
 
+- name: Remove old htdocs
+  file:
+    path: /usr/share/nginx/html
+    state: absent
+
+
+
