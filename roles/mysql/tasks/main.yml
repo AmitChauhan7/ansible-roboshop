@@ -60,7 +60,7 @@
 - name: Load Schema
   mysql_db:
     login_user: root
-    login_password: "{{ROOT_PASS}}
+    login_password: "{{ROOT_PASS}}"
     state: import
     name: all
     target: /tmp/mysql/{{item}}
