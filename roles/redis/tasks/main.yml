@@ -8,3 +8,9 @@
     name: redis
     state: present
     enablerepo: remi
+
+- name: Start Redis
+  systemd:
+    name: redis
+    state: started
+    enabled: yes
