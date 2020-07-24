@@ -2,7 +2,7 @@
 Description = {{APP_NAME}} Service
 [Service]
 User={{APPLICATION_USER}}
-ExecStart=
+ExecStart={{COMMAND}}
 SyslogIdentifier={{APP_NAME}}
 
 [Install]

@@ -19,7 +19,8 @@
   template:
     src: systemd.service
     dest: /etc/systemd/system/{{APP_NAME}}.service
-  COMMAND: "/bin/java -jar /home/{{APPLICATION_USER}}/{{APP_NAME}}/shipping.jar"
+  vars:
+    COMMAND: "/bin/java -jar /home/{{APPLICATION_USER}}/{{APP_NAME}}/shipping.jar"
 
 - name: Start Service
   systemd:
