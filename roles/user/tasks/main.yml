@@ -1,0 +1,7 @@
+- name: RUn NodeJS Common Setup
+  include_role:
+    name: common
+    tasks_from: nodejs
+  vars:
+    APP_NAME: user
+
