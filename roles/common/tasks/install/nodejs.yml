@@ -10,8 +10,15 @@
 
 - name: Get NodeJS Directory
   set_fact:
-    NODEJS_DIR: "{{ out.stdout.split('/') | last | replace('.tar.xz','')}}"
+    NODEJS_DIR: "/opt/{{ out.stdout.split('/') | last | replace('.tar.xz','')}}"
 
-- name: debug
-  debug:
-    msg: "{{NODEJS_DIR}}"
+- name: Create Command Links
+  file:
+    src: "{{NODEJS_DIR}}/bin/{{item}}"
+    dest: "/bin/{{item}}"
+    state: link
+  loop:
+    - node
+    - npm
+    - npx
+
