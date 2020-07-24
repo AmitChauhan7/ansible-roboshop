@@ -24,6 +24,7 @@
   systemd:
     name: "{{APP_NAME}}"
     state: stopped
+  ignore_errors: yes
 
 - name: CleanUp old artifacts
   file:
