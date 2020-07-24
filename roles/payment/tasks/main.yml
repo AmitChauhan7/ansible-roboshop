@@ -1,0 +1,7 @@
+- name: Run Python Common Setup
+  include_role:
+    name: common
+    tasks_from: python
+  vars:
+    APP_NAME: payment
+
