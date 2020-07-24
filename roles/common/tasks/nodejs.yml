@@ -1,29 +1,25 @@
-- name: Prin app name
-  debug:
-    msg: "{{APP_NAME}}"
+- name: Add Application User
+  include: application-user.yml
 
-#- name: Add Application User
-#  include: application-user.yml
-#
-#- name: Download Artifacts
-#  include: artifact-download.yml
-#
-#- name: Copy Artifacts
-#  copy:
-#    src: /tmp/catalogue
-#    dest: /home/{{APPLICATION_USER}}
-#    remote_src: yes
-#
-#- name: Install NodeJS
-#  include: install/nodejs.yml
-#
-#- name: Configure SystemD Service
-#  template:
-#    src: systemd.service
-#    dest: /etc/systemd/system/{{APP_NAME}}.service
-#
-#- name: Start Service
-#  systemd:
-#    name: "{{APP_NAME}}"
-#    state: restarted
-#    enabled: yes
+- name: Download Artifacts
+  include: artifact-download.yml
+
+- name: Copy Artifacts
+  copy:
+    src: /tmp/{{APP_NAME}}
+    dest: /home/{{APPLICATION_USER}}
+    remote_src: yes
+
+- name: Install NodeJS
+  include: install/nodejs.yml
+
+- name: Configure SystemD Service
+  template:
+    src: systemd.service
+    dest: /etc/systemd/system/{{APP_NAME}}.service
+
+- name: Start Service
+  systemd:
+    name: "{{APP_NAME}}"
+    state: restarted
+    enabled: yes
