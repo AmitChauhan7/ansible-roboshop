@@ -9,6 +9,8 @@
     src: /tmp/{{APP_NAME}}
     dest: /home/{{APPLICATION_USER}}
     remote_src: yes
+    owner: "{{APPLICATION_USER}}"
+    group: "{{APPLICATION_USER}}"
 
 - name: Install NodeJS
   include: install/nodejs.yml
