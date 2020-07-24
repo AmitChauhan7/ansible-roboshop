@@ -2,3 +2,12 @@
   user:
     name: "{{APPLICATION_USER}}"
 
+- name: Setup Rsyslog logging
+  template:
+    src: rsyslog.conf
+    dest: /etc/rsyslog.d/roboshop.conf
+
+- name: Restart rsyslog
+  systemd:
+    name: rsyslog
+    state: restarted
