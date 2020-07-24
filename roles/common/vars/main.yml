@@ -8,4 +8,4 @@ AZ_LOGIN_DOWNLOAD_ARTIFACT: !vault |
   35633063323566613363626437303238363362623033663565393364326334643234386339356134
   333938333239366562396665383266366366
 
-APP: ["cart", "catalogue", "user", "payment", "shipping", "dispatch"]
+APPS: ["cart", "catalogue", "user", "payment", "shipping", "dispatch"]
