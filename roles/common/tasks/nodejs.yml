@@ -19,6 +19,8 @@
   template:
     src: systemd.service
     dest: /etc/systemd/system/{{APP_NAME}}.service
+  vars:
+    COMMAND: "/bin/node /home/{{APPLICATION_USER}}/{{APP_NAME}}/server.js"
 
 - name: Start Service
   systemd:

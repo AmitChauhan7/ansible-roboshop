@@ -15,13 +15,14 @@
 - name: Install Java
   include: install/java.yml
 
-#- name: Configure SystemD Service
-#  template:
-#    src: systemd.service
-#    dest: /etc/systemd/system/{{APP_NAME}}.service
-#
-#- name: Start Service
-#  systemd:
-#    name: "{{APP_NAME}}"
-#    state: restarted
-#    enabled: yes
+- name: Configure SystemD Service
+  template:
+    src: systemd.service
+    dest: /etc/systemd/system/{{APP_NAME}}.service
+  COMMAND: "/bin/java -jar /home/{{APPLICATION_USER}}/{{APP_NAME}}/shipping.jar"
+
+- name: Start Service
+  systemd:
+    name: "{{APP_NAME}}"
+    state: restarted
+    enabled: yes

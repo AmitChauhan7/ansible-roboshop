@@ -2,7 +2,7 @@
 Description = {{APP_NAME}} Service
 [Service]
 User={{APPLICATION_USER}}
-ExecStart=/bin/node /home/{{APPLICATION_USER}}/{{APP_NAME}}/server.js
+ExecStart=
 SyslogIdentifier={{APP_NAME}}
 
 [Install]
