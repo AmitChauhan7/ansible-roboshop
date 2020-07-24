@@ -20,5 +20,15 @@
 - name: Login to AZ DevOps
   shell: echo {{AZ_LOGIN_DOWNLOAD_ARTIFACT}} | az devops login --organization https://dev.azure.com/DevOps-Batches/
 
+- name: Stop Service If Running
+  systemd:
+    name: "{{APP_NAME}}"
+    state: stopped
+
+- name: CleanUp old artifacts
+  file:
+    path: /home/{{APPLICATION_USER}}/{{APP_NAME}}
+    state: absent
+
 - name: Download Artifacts
   shell: rm -rf /tmp/{{APP_NAME}} ; mkdir /tmp/{{APP_NAME}} ; cd /tmp/{{APP_NAME}}; az artifacts universal download   --organization "{{ORG_URL}}" --project "{{PROJECT}}" --scope project --feed "RoboShop"   --name "{{APP_NAME}}" --version "{{APP_VERSION}}" --path .
