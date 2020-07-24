@@ -1,0 +1,9 @@
+[Unit]
+Description = {{APP_NAME}} Service
+[Service]
+User={{APPLICATION_USER}}
+ExecStart=/bin/node /home/{{APPLICATION_USER}}/{{APP_NAME}}/server.js
+SyslogIdentifier={{APP_NAME}}
+
+[Install]
+WantedBy=multi-user.target

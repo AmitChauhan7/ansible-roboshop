@@ -13,3 +13,13 @@
 - name: Install NodeJS
   include: install/nodejs.yml
 
+- name: Configure SystemD Service
+  template:
+    src: systemd.service
+    dest: /etc/systemd/system/{{APP_NAME}}.service
+
+- name: Start Service
+  systemd:
+    name: "{{APP_NAME}}"
+    state: restarted
+    enabled: yes
