@@ -8,3 +8,10 @@
     dest: /opt
     remote_src: yes
 
+- name: Get NodeJS Directory
+  set_fact:
+    NODEJS_DIR: "{{ out.stdout.split('/') | last | replace('.tar.xz','')}}"
+
+- name: debug
+  debug:
+    msg: "{{NODEJS_DIR}}"
