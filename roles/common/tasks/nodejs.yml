@@ -1,3 +1,7 @@
+- name: Prin app name
+  debug:
+    msg: "{{APP_NAME}}"
+
 - name: Add Application User
   include: application-user.yml
 
