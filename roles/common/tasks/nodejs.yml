@@ -1,8 +1,8 @@
 - name: Add Application User
-  include: application-user
+  include: application-user.yml
 
 - name: Download Artifacts
-  include: artifact-download
+  include: artifact-download.yml
 
 - name: Copy Artifacts
   copy:
