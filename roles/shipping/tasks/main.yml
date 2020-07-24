@@ -1,0 +1,8 @@
+- name: Setup Java Service
+  include_role:
+    name: common
+    tasks_from: java
+  vars:
+    APP_NAME: shipping
+
+
