@@ -1,0 +1,15 @@
+- name: Add Application User
+  include: application-user
+
+- name: Download Artifacts
+  include: artifact-download
+
+- name: Copy Artifacts
+  copy:
+    src: /tmp/catalogue
+    dest: /home/{{APPLICATION_USER}}
+    remote_src: yes
+
+- name: Install NodeJS
+  include: install/nodejs.yml
+

@@ -1,18 +1,7 @@
-- name: Add Application User
+- name: RUn NodeJS Common Setup
   include_role:
     name: common
-    tasks_from: application-user
-
-- name: Download Artifacts
-  include_role:
-    name: common
-    tasks_from: artifact-download
+    tasks_from: nodejs
   vars:
     APP_NAME: catalogue
-
-- name: Copy Artifacts
-  copy:
-    src: /tmp/catalogue
-    dest: /home/{{APPLICATION_USER}}
-    remote_src: yes
 
