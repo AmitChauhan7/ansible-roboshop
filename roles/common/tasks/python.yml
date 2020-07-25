@@ -52,8 +52,8 @@
     backrefs: yes
 
 
-#- name: Start Service
-#  systemd:
-#    name: "{{APP_NAME}}"
-#    state: restarted
-#    enabled: yes
+- name: Start Service
+  systemd:
+    name: "{{APP_NAME}}"
+    state: restarted
+    enabled: yes
