@@ -12,6 +12,11 @@
     owner: "{{APPLICATION_USER}}"
     group: "{{APPLICATION_USER}}"
 
+- name: Setup executable Permissions
+  file:
+    path: "/home/{{APPLICATION_USER}}/{{APP_NAME}}/dispatch"
+    mode: '0755'
+
 - name: Configure SystemD Service
   template:
     src: systemd.service
