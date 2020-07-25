@@ -1,0 +1,8 @@
+- name: Setup GoLanG Service - Dispatch
+  include_role:
+    name: common
+    tasks_from: go
+  vars:
+    APP_NAME: dispatch
+
+
