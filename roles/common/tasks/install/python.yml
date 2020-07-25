@@ -1,0 +1,5 @@
+- name: Install Python3
+  yum:
+    name: ["python36", "gcc", "python3-devel"]
+    state: present
+
