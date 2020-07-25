@@ -29,6 +29,14 @@
     COMMAND: "/usr/local/bin/uwsgi --ini payment.ini"
     APPLICATION_USER: root
 
+- name: Replace UID for Payment Service
+  lineinfile:
+    path: /home/{{APPLICATION_USER}}/{{APP_NAME}}/payment.ini
+    regexp: '^uid'
+    line: 'uid = 1001'
+    backrefs: yes
+
+
 #- name: Start Service
 #  systemd:
 #    name: "{{APP_NAME}}"
