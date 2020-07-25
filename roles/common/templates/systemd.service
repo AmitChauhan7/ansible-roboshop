@@ -1,7 +1,12 @@
 [Unit]
 Description = {{APP_NAME}} Service
 [Service]
+{% if WORKINGDIRECTORY is defined %}
+User=root
+WorkingDirectory=/home/{{APPLICATION_USER}}/{{APP_NAME}}
+{% else %}
 User={{APPLICATION_USER}}
+{% endif %}
 ExecStart={{COMMAND}}
 SyslogIdentifier={{APP_NAME}}
 

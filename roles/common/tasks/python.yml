@@ -27,13 +27,28 @@
     dest: /etc/systemd/system/{{APP_NAME}}.service
   vars:
     COMMAND: "/usr/local/bin/uwsgi --ini payment.ini"
-    APPLICATION_USER: root
+    WORKINGDIRECTORY: true
+
+- name: Get UID
+  shell: id -u {{APPLICATION_USER}}
+  register: uid
+
+- name: Get GID
+  shell: id -g {{APPLICATION_USER}}
+  register: gid
 
 - name: Replace UID for Payment Service
   lineinfile:
     path: /home/{{APPLICATION_USER}}/{{APP_NAME}}/payment.ini
     regexp: '^uid'
-    line: 'uid = 1001'
+    line: 'uid = {{uid.stdout}}'
+    backrefs: yes
+
+- name: Replace GID for Payment Service
+  lineinfile:
+    path: /home/{{APPLICATION_USER}}/{{APP_NAME}}/payment.ini
+    regexp: '^gid'
+    line: 'gid = {{gid.stdout}}'
     backrefs: yes
 
 
