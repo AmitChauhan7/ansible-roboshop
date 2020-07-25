@@ -51,7 +51,6 @@
     line: 'gid = {{gid.stdout}}'
     backrefs: yes
 
-
 - name: Start Service
   systemd:
     name: "{{APP_NAME}}"
