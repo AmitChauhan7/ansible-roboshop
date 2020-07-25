@@ -17,7 +17,7 @@
     src: systemd.service
     dest: /etc/systemd/system/{{APP_NAME}}.service
   vars:
-    COMMAND: "/home/{{APPLICATION_USER/{{APP_NAME}}/dispatch"
+    COMMAND: "/home/{{APPLICATION_USER}}/{{APP_NAME}}/dispatch"
 
 - name: Start Service
   systemd:
